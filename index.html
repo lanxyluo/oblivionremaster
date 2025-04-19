@@ -304,40 +304,60 @@
             }
         });
 
-        function loadHomePage() {
-            const mainContent = document.getElementById('main-content');
-            mainContent.innerHTML = `
-                <section class="mb-12 fade-in">
-                    <h1 class="text-4xl font-bold mb-6 text-white">Welcome to Oblivion Remaster Games</h1>
-                    <p class="text-xl text-gray-300 mb-8">Discover and play the best free online games. No downloads, just fun!</p>
-                    
-                    <h2 class="text-2xl font-bold mb-4 text-white">Featured Games</h2>
-                    <div class="game-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        ${games.filter(game => game.featured).map(game => createGameCard(game)).join('')}
-                    </div>
-                </section>
-
-                <section class="mb-12 fade-in">
-                    <h2 class="text-2xl font-bold mb-4 text-white">Puzzle Games</h2>
-                    <div class="game-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        ${games.filter(game => game.category === 'puzzle').map(game => createGameCard(game)).join('')}
-                    </div>
-                    <div class="text-center mt-6">
-                        <a href="category.html?category=puzzle" class="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">View All Puzzle Games</a>
-                    </div>
-                </section>
-
-                <section class="mb-12 fade-in">
-                    <h2 class="text-2xl font-bold mb-4 text-white">Adventure Games</h2>
-                    <div class="game-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        ${games.filter(game => game.category === 'adventure').map(game => createGameCard(game)).join('')}
-                    </div>
-                    <div class="text-center mt-6">
-                        <a href="category.html?category=adventure" class="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">View All Adventure Games</a>
-                    </div>
-                </section>
-            `;
+       function loadHomePage() {
+    const mainContent = document.getElementById('main-content');
+    mainContent.innerHTML = `
+        <section class="mb-12 fade-in">
+            <h1 class="text-4xl font-bold mb-6 text-white">Welcome to Oblivion Remaster Games</h1>
+            <p class="text-xl text-gray-300 mb-8">Discover and play the best free online games. No downloads, just fun!</p>
             
+            <h2 class="text-2xl font-bold mb-4 text-white">Featured Games</h2>
+            <div class="game-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                ${games.filter(game => game.featured).map(game => createGameCard(game)).join('')}
+            </div>
+        </section>
+
+        <section class="mb-12 fade-in">
+            <h2 class="text-2xl font-bold mb-4 text-white">Puzzle Games</h2>
+            <div class="game-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                ${games.filter(game => game.category === 'puzzle').map(game => createGameCard(game)).join('')}
+            </div>
+            <div class="text-center mt-6">
+                <a href="category.html?category=puzzle" class="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">View All Puzzle Games</a>
+            </div>
+        </section>
+
+        <section class="mb-12 fade-in">
+            <h2 class="text-2xl font-bold mb-4 text-white">Adventure Games</h2>
+            <div class="game-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                ${games.filter(game => game.category === 'adventure').map(game => createGameCard(game)).join('')}
+            </div>
+            <div class="text-center mt-6">
+                <a href="category.html?category=adventure" class="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">View All Adventure Games</a>
+            </div>
+        </section>
+
+        <section class="mb-12 fade-in">
+            <h2 class="text-2xl font-bold mb-4 text-white">Casual Games</h2>
+            <div class="game-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                ${games.filter(game => game.category === 'casual').map(game => createGameCard(game)).join('')}
+            </div>
+            <div class="text-center mt-6">
+                <a href="category.html?category=casual" class="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">View All Casual Games</a>
+            </div>
+        </section>
+
+        <section class="mb-12 fade-in">
+            <h2 class="text-2xl font-bold mb-4 text-white">Shooting Games</h2>
+            <div class="game-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                ${games.filter(game => game.category === 'shooting').map(game => createGameCard(game)).join('')}
+            </div>
+            <div class="text-center mt-6">
+                <a href="category.html?category=shooting" class="inline-block px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">View All Shooting Games</a>
+            </div>
+        </section>
+    `;
+    
             // Update page title and meta for SEO
             document.title = "Oblivion Remaster Games - Play Free Online Games";
             updateCanonicalUrl("https://oblivionremaster.com/");
