@@ -164,24 +164,6 @@
 
     <!-- Game Data -->
     <script>
-      // Check if there's redirect information
-if (sessionStorage.redirectUrl) {
-  const redirectUrl = new URL(sessionStorage.redirectUrl);
-  // Clear stored URL
-  delete sessionStorage.redirectUrl;
-  
-  // Determine which page to load based on URL path
-  if (redirectUrl.pathname.includes('game.html')) {
-    const gameId = redirectUrl.searchParams.get('id');
-    loadGamePage(gameId);
-  } else if (redirectUrl.pathname.includes('category.html')) {
-    const category = redirectUrl.searchParams.get('category');
-    loadCategoryPage(category);
-  } else if (redirectUrl.pathname.includes('search.html')) {
-    const query = redirectUrl.searchParams.get('q');
-    loadSearchResults(query);
-  }
-}
         // This is where you'll store information about all your games
         // You can easily add more games later by adding to this array
         const games = [
